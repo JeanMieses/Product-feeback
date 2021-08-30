@@ -1,0 +1,517 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: 'Jost', sans-serif;
+  background-color: #F2F4FF;
+  z-index: -1;
+}
+
+/* ----------------navbar style------------------ */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0px;
+  height: 120px;
+  width: 100%;
+  background-image: url("/suggestions/mobile/background-header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+nav {
+  z-index: 1;
+  animation-name: slidein;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+}
+
+header div {
+  z-index: 1;
+  margin: 0 1em;
+}
+
+header div button {
+  background-color: transparent;
+  font-weight: bold;
+  border: none;
+  position: relative;
+  top: 20%;
+}
+
+header div h1 {
+  text-transform: capitalize;
+  color: #fff;
+  margin-bottom: 0.2em;
+}
+
+header div p {
+  text-transform: capitalize;
+  margin-top: 0px;
+  color: #fff;
+}
+
+header div button img {
+  margin: 1em;
+  width: 60%;
+}
+
+header div a {
+  color: white;
+  text-decoration: none;
+}
+
+#menu {
+  /* add a button to menu with x. When we click x, we slide out aka close*/
+  z-index: 1;
+  position: absolute;
+  top: 4%;
+  right: 0;
+  height: 85vh;
+  width: 70%;
+  background-color: #F2F4FF;
+  border: 1px solid #000;
+}
+
+#menu .categories-div, .currentUser {
+  height: 160px;
+  border: none;
+  margin: 1em auto;
+  width: 78%;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+#menu .currentUser {
+  height: 180px;
+}
+
+#menu .categories-div div {
+  width: 70%;
+  margin: 0.4em auto;
+}
+
+#menu .categories-div button {
+  border: none;
+  background-color: #F2F4FF;
+  color: #4661E6;
+  margin: 0.6em;
+  border-radius: 20px;
+  text-align: center;
+}
+
+#menu .currentUser h2 {
+  text-transform: capitalize;
+  color: #647196;
+  margin: 1em;
+  display: inline;
+}
+
+#menu .currentUser a {
+  color: #4661E6;
+  margin: 1em;
+  font-size: 17px;
+}
+
+#menu .currentUser div h2 {
+  text-transform: capitalize;
+  color: #3A4374;
+  margin: 1em;
+  display: inline;
+  font-size: 15px;
+  letter-spacing: 1.01px;
+}
+
+#menu .currentUser div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#menu .currentUser div a {
+  color: #4661E6;
+}
+
+#menu .currentUser p {
+  color: #647196;
+  margin-bottom: 0.01;
+  margin-top: 0.5em;
+  font-size: 16px;
+  text-align: center;
+}
+
+.close-menu {
+  background-color: inherit;
+  border: none;
+}
+
+.hide {
+  display: none;
+}
+
+.overlay:after {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* ---------------end of the navbar style ------------------------ */
+.feedback-board-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  padding: 10px;
+  height: 140px;
+  width: 30%;
+  margin-top: 1em;
+  border-radius: 10px;
+  text-transform: capitalize;
+  background-image: url("/suggestions/tablet/background-header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.feedback-board {
+  display: none;
+}
+
+#options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  background-color: #373F68;
+  margin: 0 0 1em 0;
+}
+
+#options p {
+  color: #fff;
+  text-transform: capitalize;
+}
+
+#options select {
+  border: none;
+  color: #fff;
+  background-color: #373F68;
+}
+
+#options button {
+  background-color: #AD1FEA;
+  border: none;
+  height: 40px;
+  width: 110px;
+  border-radius: 8px;
+  padding: 6px;
+  text-align: center;
+}
+
+#options button a {
+  text-transform: capitalize;
+  color: #fff;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post {
+  margin: 0.7em 0;
+  width: 90%;
+  background-color: #FFF;
+}
+
+.post div {
+  width: 90%;
+  margin: auto;
+}
+
+div a {
+  text-decoration: none;
+}
+
+.post-title {
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #3A4374;
+}
+
+.post-description {
+  line-height: 1.6;
+  font-weight: lighter;
+  color: #647196;
+}
+
+.upvotes, .category {
+  color: #647196;
+  border-radius: 10px;
+  border: none;
+  background-color: #F2F4FF;
+  margin: 1.4em 0;
+}
+
+.category {
+  padding: 10px;
+  display: block;
+  color: #4661E6;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 2em 0;
+}
+
+.upvoteForm {
+  margin-left: 1em;
+  float: left;
+}
+
+.comments {
+  margin: 2em;
+  float: right;
+}
+
+.currentUser a {
+  color: #4661E6;
+}
+
+/* ---------------tablets view------------------------- */
+@media (min-width: 668px) and (max-width: 1240px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    display: none;
+  }
+
+  #options {
+    padding: 10px;
+    width: 98%;
+  }
+
+  .feedback-board {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5em;
+    width: 86%;
+    border: none;
+  }
+
+  .post {
+    width: 100%;
+  }
+
+  .upvote {
+    color: #647196;
+  }
+
+  .feedback-board-img h2 {
+    margin: 0 0 0 1em;
+  }
+
+  .feedback-board-img p {
+    margin-left: 1.6em;
+    margin-top: 0.2em;
+  }
+
+  .categories-div, .currentUser {
+    height: 140px;
+    border: none;
+    padding: 10px;
+    margin: 1em 0;
+    width: 30%;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  .categories-div div {
+    width: 80%;
+    margin: 0.3em auto;
+  }
+
+
+  .categories-div button {
+    border: none;
+    background-color: #F2F4FF;
+    color: #4661E6;
+    margin: 0.34em;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 13.4px;
+  }
+
+  section {
+    margin-top: 1em;
+    width: 86%;
+  }
+
+  .post-title {
+    font-size: 18px;
+  }
+
+  .post-description {
+    font-size: 20px;
+  }
+
+  .currentUser h2 {
+    color: #647196;
+    font-size: 15px;
+  }
+
+  .currentUser p {
+    color: #647196;
+    margin-top: 0.3em;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .currentUser div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+/* --------------------------desktop view---------------------------- */
+@media (min-width: 1240px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  header {
+    display: none;
+  }
+
+  #options {
+    padding: 10px;
+    width: 98%;
+  }
+
+  .feedback-board {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+    width: 20%;
+    height: 540px;
+    border: none;
+  }
+
+  .feedback-board-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    height: 140px;
+    width: 93.4%;
+  }
+
+  .feedback-board-img h2 {
+    margin: 0 0 0 1em;
+  }
+
+  .feedback-board-img p {
+    margin-left: 1.6em;
+    margin-top: 0.2em;
+  }
+
+  .categories-div button {
+    border: none;
+    background-color: #F2F4FF;
+    color: #4661E6;
+    margin: 0.4em;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .categories-div, .currentUser {
+    border: none;
+    padding: 10px;
+    margin: 1em 0;
+    width: 93.4%;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  section {
+    margin-top: 5em;
+    width: 70%;
+  }
+
+  .post {
+    width: 100%;
+  }
+
+  .upvote {
+    color: #647196;
+  }
+
+  .post-title {
+    font-size: 18px;
+  }
+
+  .post-description {
+    font-size: 20px;
+  }
+
+  .currentUser a {
+    color: #4661E6;
+    margin: 1em;
+  }
+
+  .currentUser div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .currentUser h2 {
+    color: #647196;
+    font-size: 15px;
+  }
+
+  .currentUser p {
+    color: #647196;
+    margin-bottom: 0.01;
+    margin-top: 0.5em;
+    font-size: 16px;
+    text-align: center;
+  }
+}

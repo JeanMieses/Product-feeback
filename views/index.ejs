@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/css/index.css">
+  <title></title>
+</head>
+
+<body>
+
+  <header>
+    <div class="">
+      <h1>frontend mentor</h1>
+      <p>feedback board</p>
+    </div>
+
+    <div class="">
+      <button id="menu-btn"><img src="/shared/mobile/icon-hamburger.svg" alt=""></button>
+    </div>
+
+    <nav class="hide" id="menu">
+      <button class="close-menu"><i class="fas fa-times"></i></button>
+
+      <div class="categories-div">
+      <div class="">
+        <button class="all">all</button>
+        <button class="categories">UI</button>
+        <button class="categories">UX</button>
+        <br>
+        <button class="categories">enhancement</button>
+        <button class="categories">bug</button>
+        <br>
+        <button class="categories">feature</button>
+      </div>
+      </div>
+
+      <div class="currentUser">
+        <%if(!currentUser) {%>
+        <a class="authentication" href="/feedbacks/login">login</a>
+        <a class="authentication" href="/feedbacks/register">signup</a>
+        <%} else {%>
+          <div class="">
+            <h2> Welcome: <%= currentUser.username %></h2>
+            <a class="logout" href="/feedbacks/logout">logout</a>
+          </div>
+        <% } %>
+        <p>Shared Your Feedback.</p>
+        <p>Helps others.</p>
+        <p>Or Get Help!</p>
+      </div>
+    </nav>
+  </header>
+
+  <div class="feedback-board">
+    <div class="feedback-board-img">
+      <h2>frontend mentor</h2>
+      <p>feedback board</p>
+    </div>
+
+    <div class="categories-div">
+      <!-- <div class=""> -->
+        <button class="all">all</button>
+        <button class="categories">UI</button>
+        <button class="categories">UX</button>
+        <br>
+        <button class="categories">enhancement</button>
+        <button class="categories">bug</button>
+        <br>
+        <button class="categories">feature</button>
+      <!-- </div> -->
+    </div>
+
+    <div class="currentUser">
+      <%if(!currentUser) {%>
+      <a class="authentication" href="/feedbacks/login">login</a>
+      <a class="authentication" href="/feedbacks/register">signup</a>
+      <%} else {%>
+        <div class="">
+          <h2> Welcome: <%= currentUser.username %></h2>
+          <a class="logout" href="/feedbacks/logout">logout</a>
+        </div>
+      <% } %>
+      <p>Shared Your Feedback.</p>
+      <p>Helps others.</p>
+      <p>Or Get Help!</p>
+    </div>
+  </div>
+
+  <section>
+
+    <div id="options">
+      <p>sort by:
+        <select class="" name="">
+          <option value="">Most Upvotes</option>
+          <option value="">Least Upvotes</option>
+        </select>
+      </p>
+
+      <button> <a href="/feedbacks/new">+ add feedback</a> </button>
+    </div>
+
+    <%for(let i = 0; i < feedbacks.length; i++) { %>
+    <div data-upvotes="<%=feedbacks[i].upvotes%>" class="post <%=feedbacks[i].category%>">
+      <div class="">
+        <a href="/feedbacks/<%=feedbacks[i]._id%>">
+          <h3 class="post-title"><%=feedbacks[i].title%></h3>
+        </a>
+        <p class="post-description"><%=feedbacks[i].description%></p>
+        <button class="category"><%=feedbacks[i].category%></button>
+
+        <form class="upvoteForm" action="/feedbacks/<%=feedbacks[i]._id%>/vote?_method=PATCH" method="post">
+          <button class="upvotes">
+            <i class="fas fa-chevron-up"></i> <%=feedbacks[i].upvotes%>
+          </button>
+        </form>
+
+        <span class="comments"> <img src="/shared/icon-comments.svg" alt=""> <%=feedbacks[i].comments.length%></span>
+      </div>
+    </div>
+    <%}%>
+      </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="javascript/index.js" charset="utf-8"></script>
+  </body>
+</html>

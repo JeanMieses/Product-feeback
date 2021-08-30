@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/css/show.css">
+  <title></title>
+</head>
+
+<body>
+
+  <section>
+    <div class="top-buttons">
+      <a class="go-back" href="/feedbacks">go back</a>
+      <% if(currentUser && feedback.author.equals(currentUser)) {%>
+      <button class="edit">
+        <a href="/feedbacks/<%=feedback._id%>/update">edit feedback</a>
+      </button>
+      <% } %>
+    </div>
+
+    <div class="post">
+      <div class="">
+        <h3 class="post-title"><%=feedback.title%></h3>
+        <i>Posted by <%=feedback.author.username%></i>
+        <p class="post-description"><%=feedback.description%></p>
+        <button class="category"><%=feedback.category%></button>
+        <div class="holder">
+          <form class="upvoteForm" action="/feedbacks/<%=feedback._id%>/vote?_method=PATCH" method="post">
+            <button class="upvotes">
+              <i class="fas fa-chevron-up"></i> <%=feedback.upvotes%>
+            </button>
+          </form>
+          <span class="comments-count"> <img src="/shared/icon-comments.svg" alt=""> <%=feedback.comments.length%></span>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="post-comments">
+        <h3><%=feedback.comments.length%> comments</h3>
+        <% for(comment of feedback.comments) { %>
+        <h4><%=comment.author.username%></h4>
+        <p class="comment"><%=comment.comment%></p>
+        <hr>
+        <% } %>
+      </div>
+    </div>
+
+    <%if(currentUser) { %>
+    <form class="create-comment" action="feedbacks/<%=feedback._id%>/comment" method="post">
+      <label for="comment-input">
+        <h3>add comment</h3>
+      </label>
+      <input required id="comment-input" name="comment" type="text" name="" value="">
+      <br>
+      <button>post comment</button>
+    </form>
+    <%} else {%>
+    <a href="/feedbacks/login">login to comment</a>
+    <%}%>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="javascript/showUpvote.js" charset="utf-8"></script>
+</body>
+
+</html>

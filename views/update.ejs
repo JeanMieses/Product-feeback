@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/update.css">
+    <title></title>
+  </head>
+  <body>
+
+    <section>
+      <div class="">
+        <a class="go-back" href="/feedbacks/<%=feedback._id%>">Go back</a>
+        <h1>edit '<%=feedback.title%>'</h1>
+        <form class="" action="/feedbacks/<%=feedback._id%>?_method=PATCH" method="post">
+          <label for="title"><h3>feedback title</h3></label>
+          <p>add a short, descriptive headline</p>
+          <input required id="title" type="text" name="title" value="<%=feedback.title%>">
+
+          <label for="category"><h3>category< /h3></label>
+          <p>choose a category for yout feedback</p>
+          <select  required id="category" name="category">
+            <option value="<%=feedback.category%>"><%=feedback.category%></option>
+            <option value="feature">feature</option>
+            <option value="bug">bug</option>
+            <option value="enhancement">enhancement</option>
+            <option value="UI">UI</option>
+            <option value="UX">UX</option>
+          </select>
+
+          <label for="description"><h3>feedback detail</h3></label>
+          <p>include any specific comments on what should be improved, added, etc</p>
+          <textarea required id="description" name="description" rows="4" cols="35"><%=feedback.description%></textarea>
+          <button>save changes</button>
+        </form>
+
+        <form class="cancel-form" action="/feedbacks/<%=feedback._id%>" method="get">
+          <button class="cancel">cancel</button>
+        </form>
+
+        <form class="delete-form" action="/feedbacks/<%=feedback._id%>?_method=DELETE" method="post">
+          <button class="delete">delete</button>
+        </form>
+      </div>
+    </section>
+
+  </body>
+</html>

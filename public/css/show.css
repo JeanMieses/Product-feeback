@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: 'Jost', sans-serif;
+  background-color: #F2F4FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2.6em;
+  margin-bottom: 1em;
+  background-color: #F2F4FF;
+  width: 78%;
+}
+
+.go-back {
+  margin-top: 0.8em;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #647196;
+}
+
+.edit {
+  display: flex;
+  align-self: baseline;
+  background-color: #4661E6;
+  border: none;
+  padding: 11px 10px;
+  border-radius: 9px;
+}
+
+.edit a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #fff;
+}
+
+.post {
+  box-shadow: 5px 3px 7px #3A4374;
+  margin: 1em 0;
+  width: 80%;
+  background-color: #FFF;
+}
+
+.post div {
+  width: 90%;
+  margin: auto;
+}
+
+.post-title {
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #3A4374;
+  font-size: 19px;
+}
+
+.post-description {
+  line-height: 1.6;
+  font-weight: lighter;
+  color: #647196;
+  font-size: 15px;
+}
+
+.upvotes, .category {
+  color: #647196;
+  border-radius: 10px;
+  border: none;
+  background-color: #F2F4FF;
+  margin: 1.4em 0;
+  font-size: 17px;
+}
+
+.category {
+  padding: 10px;
+  display: block;
+  color: #4661E6;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.post-comments h3 {
+  font-size: 20px;
+  margin-bottom: 2em;
+}
+
+.fas {
+  color: #4661E6;
+  margin: 0.4em
+}
+
+.comments-count {
+  margin-right: 1em;
+  font-size: 17px;
+}
+
+.post .holder {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em auto;
+ }
+
+.post-comments {
+  /* box-shadow: 1px 1px 1px #3A4374; */
+  margin: 0em 0;
+  width: 80%;
+  background-color: #FFF;
+  max-width: 100%;
+}
+
+.comment {
+  margin: 1em auto;
+  color: #3A4374;
+  overflow: hidden;
+  width: 90%;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.post-comments h4 {
+  margin-bottom: 0.6em;
+}
+
+.create-comment {
+  margin-top: 2em;
+  width: 70%;
+}
+
+#comment-input {
+  width: 90%;
+  height: 100px;
+  border-radius: 9px;
+  border-color: #647196;
+}
+.create-comment button{
+  background-color: #4661E6;
+  color: #fff;
+  height: 35px;
+  margin-left: 0.3em;
+  margin-top: 0.5em;
+  border: none;
+  border-radius: 10px;
+  font-weight: bolder;
+}
+
+@media (min-width: 720px) {
+
+  .post {
+    width: 70%
+  }
+
+  .comment{
+    font-size: 20PX;
+  }
+
+  .post-description  {
+    font-size: 23PX;
+  }
+
+
+}
