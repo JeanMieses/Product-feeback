@@ -302,6 +302,15 @@ div a {
   color: #4661E6;
 }
 
+.categories-div button:hover, .upvotes:hover {
+  transition-property: background-color;
+  transition-property: color;
+  background-color: #4661E6;
+  color: #fff;
+  transition: ease;
+  transition-delay: 0.13s;
+}
+
 /* ---------------tablets view------------------------- */
 @media (min-width: 668px) and (max-width: 1240px) {
   body {
@@ -359,7 +368,6 @@ div a {
     width: 80%;
     margin: 0.3em auto;
   }
-
 
   .categories-div button {
     border: none;

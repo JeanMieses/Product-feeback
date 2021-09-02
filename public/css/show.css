@@ -43,7 +43,7 @@ section {
   border-radius: 9px;
 }
 
-.edit a {
+.edit span a {
   text-transform: capitalize;
   text-decoration: none;
   color: #fff;
@@ -96,11 +96,6 @@ section {
 .post-comments h3 {
   font-size: 20px;
   margin-bottom: 2em;
-}
-
-.fas {
-  color: #4661E6;
-  margin: 0.4em
 }
 
 .comments-count {
@@ -158,6 +153,47 @@ section {
   border: none;
   border-radius: 10px;
   font-weight: bolder;
+  width: 25%;
+}
+
+.upvotes:hover {
+  transition-property: background-color;
+  transition-property: color;
+  background-color: #4661E6;
+  color: #fff;
+  transition: ease;
+  transition-delay: 0.13s;
+}
+
+.go-back:hover{
+  transform: scale(1.2);
+  transition: ease-in;
+  transition-delay: 0.090s;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 @media (min-width: 720px) {

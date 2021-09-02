@@ -60,11 +60,6 @@ for (let upvoteForm of upvoteForms) {
   });
 };
 
-// --------------------------------sort-------------------------------------
-
-
-
-
 // -----------------------------funtions----------------------------------------
 function filter(show) {
   let myArray = Array.from(posts);
@@ -78,8 +73,6 @@ function filter(show) {
     item.style.display = 'none';
   })
 }
-
-
 
 
 

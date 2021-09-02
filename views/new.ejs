@@ -12,32 +12,39 @@
   </head>
   <body>
     <section>
-      <div class="">
+      <div class="container">
         <a class="go-back" href="/feedbacks">Go back</a>
         <h1>create new feedback</h1>
         <form class="" action="/feedbacks" method="post">
-          <label for="title"><h3>feedback title</h3></label>
-          <p>add a short, descriptive headline</p>
-          <input required id="title" type="text" name="title">
+          <div class="">
+            <label for="title"><h3>feedback title</h3></label>
+            <p>add a short, descriptive headline</p>
+            <input autofocus required id="title" type="text" name="title">
+          </div>
 
-          <label for="category"><h3>category</h3></label>
-          <p>choose a category for yout feedback</p>
-          <select  required id="category" name="category">
-            <option value="feature">feature</option>
-            <option value="bug">bug</option>
-            <option value="enhancement">enhancement</option>
-            <option value="UI">UI</option>
-            <option value="UX">UX</option>
-          </select>
+          <div class="">
+            <label for="category"><h3>category</h3></label>
+            <p>choose a category for yout feedback</p>
+            <select  required id="category" name="category">
+              <option value="feature">feature</option>
+              <option value="bug">bug</option>
+              <option value="enhancement">enhancement</option>
+              <option value="UI">UI</option>
+              <option value="UX">UX</option>
+            </select>
+          </div>
 
-          <label for="description"><h3>feedback detail</h3></label>
-          <p>include any specific comments on what should be improved, added, etc</p>
-          <textarea required id="description" name="description" rows="3" cols="35"></textarea>
-          <button>add feedback</button>
+          <div class="">
+            <label for="description"><h3>feedback detail</h3></label>
+            <p>include any specific comments on what should be improved, added, etc</p>
+            <textarea required id="description" name="description" rows="3" cols="35"></textarea>
+          </div>
+
+          <button class="button "> <span>add feedback</span> </button>
         </form>
 
         <form class="cancel-form" action="/feedbacks" method="get">
-          <button class="cancel">cancel</button>
+          <button class="button cancel"> <span>cancel</span> </button>
         </form>
 
 

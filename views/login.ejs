@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/update.css">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-    <h1>login</h1>
 
-    <form class="" action="/feedbacks/login" method="post">
-      <label for="username">Username</label>
-      <input id="username" required type="text" name="username">
-      <label for="password">Password</label>
-      <input id="password" required type="password" name="password">
-      <button>login</button>
-    </form>
+    <section>
+      <div class="container">
+        <a class="go-back" href="/feedbacks">Go back</a>
+
+        <h1>login</h1>
+        <form class="" action="/feedbacks/login" method="post">
+          <div class="">
+            <label autofocus for="username"> <h3>Username</h3> </label>
+            <input autofocus id="username" required type="text" name="username">
+          </div>
+          <div class="">
+            <label for="password"> <h3>Password</h3> </label>
+            <br>
+            <input id="password" required type="password" name="password">
+          </div>
+          <button class="button"> <span>login</span> </button>
+        </form>
+      </div>
+    </section>
+
   </body>
 </html>

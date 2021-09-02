@@ -19,8 +19,8 @@
     <div class="top-buttons">
       <a class="go-back" href="/feedbacks">go back</a>
       <% if(currentUser && feedback.author.equals(currentUser)) {%>
-      <button class="edit">
-        <a href="/feedbacks/<%=feedback._id%>/update">edit feedback</a>
+      <button class="edit button">
+        <span> <a href="/feedbacks/<%=feedback._id%>/update">edit feedback</a> </span>
       </button>
       <% } %>
     </div>
@@ -60,7 +60,7 @@
       </label>
       <input required id="comment-input" name="comment" type="text" name="" value="">
       <br>
-      <button>post comment</button>
+      <button class="button"> <span>post comment</span> </button>
     </form>
     <%} else {%>
     <a href="/feedbacks/login">login to comment</a>
