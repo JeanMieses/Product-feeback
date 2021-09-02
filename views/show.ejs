@@ -46,9 +46,14 @@
       <div class="post-comments">
         <h3><%=feedback.comments.length%> comments</h3>
         <% for(comment of feedback.comments) { %>
-        <h4><%=comment.author.username%></h4>
+        <h4><%=comment.author.username%>
+        <% if(currentUser && comment.author.equals(currentUser)) {%>
+          <form class="delete-comment-form" action="/feedbacks/<%=feedback._id%>/comment/<%=comment._id%>?_method=DELETE" method="post">
+            <button class="delete-comment-button"><i class="fas fa-times"></i></button>
+          </form>
+          </h4>
+          <% } %>
         <p class="comment"><%=comment.comment%></p>
-        <hr>
         <% } %>
       </div>
     </div>

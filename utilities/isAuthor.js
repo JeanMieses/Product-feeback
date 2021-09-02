@@ -1,6 +1,6 @@
 const Feedback = require('./../models/feedback');
 
-const isAuthor = async(req, res, next) => {
+module.exports = isAuthor = async(req, res, next) => {
   const {id} = req.params;
   const feedback = await Feedback.findOne({_id: id});
     if(!feedback.author.equals(req.user._id)) {
@@ -8,6 +8,3 @@ const isAuthor = async(req, res, next) => {
     }
   next();
 }
-
-
-module.exports = isAuthor;

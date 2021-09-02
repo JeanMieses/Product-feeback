@@ -40,7 +40,6 @@ app.use('/feedbacks', feedbacksRouter);
 app.use('/feedbacks', commentRouter);
 app.use('/feedbacks', upvotesRouter);
 
-
 app.listen(3000, () => {
   console.log('Starting server');
 })
