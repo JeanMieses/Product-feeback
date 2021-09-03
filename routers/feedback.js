@@ -5,15 +5,6 @@ const Feedback = require('./../models/feedback');
 const isLoggedIn = require('./../utilities/isLoggedIn');
 const isAuthor = require('./../utilities/isAuthor');
 
-mongoose.connect('mongodb://localhost:27017/product_feedback', {useNewUrlParser: true, useUnifiedTopology: true})
-.then(() => {
-  console.log('connected to mongoose');
-})
-.catch((err) => {
-  console.log('error with mongoose');
-  console.log(err);
-})
-
 // GET /feedbacks --list all the elements
 router.get('/', async (req, res) => {
   const feedbacks = await Feedback.find({});

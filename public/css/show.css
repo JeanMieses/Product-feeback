@@ -122,11 +122,12 @@ section {
 
 .comment {
   margin: 1em auto;
-  color: #3A4374;
+  color: #647196;
   overflow: hidden;
   width: 90%;
   line-height: 1.7;
   font-size: 15px;
+  font-weight: lighter;
 }
 
 .post-comments h4 {
