@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![image](https://user-images.githubusercontent.com/71618218/132031910-90dd76d9-5adb-47fb-b0b5-6991bc4bcc8a.png)
 
 ### Links
 
