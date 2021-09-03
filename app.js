@@ -18,7 +18,8 @@ const MongoStore = require('connect-mongo');
 const db_url = process.env.DB_URL;
 
 // mongodb+srv://Jean-product-feedback:oI8QRxpDXdM8siWm@cluster0.bdjxc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-const dburl='mongodb://localhost:27017/product_feedback';
+const dburl= process.env.DB_URL || 'mongodb://localhost:27017/product_feedback';
+
 mongoose.connect(dburl, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
   console.log('connected to mongoose');
@@ -39,7 +40,7 @@ app.use(express.static('public'));
 app.use(express.static('assets'));
 app.use(session({
   store: MongoStore.create({mongoUrl: dburl, touchAfer: 24*60*60}),
-  secret: 'secret',
+  secret: process.env.SECRET || '2021',
   resave: false,
   saveUninitialized: true}));
 
