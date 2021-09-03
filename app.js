@@ -63,6 +63,7 @@ app.use('/feedbacks', commentRouter);
 app.use('/feedbacks', upvotesRouter);
 app.use('*', (req, res) => {res.redirect('/feedbacks');});
 
-app.listen(3000, () => {
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
   console.log('Starting server');
 })
