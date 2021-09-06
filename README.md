@@ -57,7 +57,7 @@ I learned the basics about how to implement authentication in a web app by using
 login, logout and persistent users' sessions. I learned about how Web Apps or web sites stored passwords in the Database.
 We do not stored the password itself. WE run the user's password through a hashing function and we store the output from that hashing function.
 
-I am proud of this block the code because I figured out a way to let users to upvote in any post.
+I am proud of this block the code because I figured out a way to let users to upvote in any post by making a post request via Axios.
 
 ``` upvoteForm.addEventListener('submit', async (e) => {
     e.preventDefault();
