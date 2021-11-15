@@ -22,7 +22,7 @@ async function createFeedbacks() {
       category: data.productRequests[i].category,
       upvotes: data.productRequests[i].upvotes,
       description: data.productRequests[i].description,
-      author: '61321f3525ff3c0016c10646'
+      author: '6192c3d6d98c1113a4f454a0'
     });
 
     await feedback.save()

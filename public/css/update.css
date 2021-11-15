@@ -1,9 +1,37 @@
 body {
+  height: 100vh;
+  width: 100%;
   margin: 0;
   padding: 0;
-  font-size: 13px;
-  font-family: 'Jost', sans-serif;
-  background-color: #F2F4FF;
+  background-color: #E0E0E0;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Roboto', sans-serif;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+h1 {
+  color: #3A4374;
+  margin-bottom: 0.6em;
+  text-align: center;
+  font-size: 21px;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #3A4374;
+  margin-bottom: 0;
+  margin: 0.3em 0;
+  font-size: 17px;
 }
 
 h3 {
@@ -22,52 +50,35 @@ p {
   color: #647196;
 }
 
-section {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  margin: 1em auto;
-  margin-top: 2em;
   width: 90%;
   box-shadow: 5px 5px 13px #3A4374;
-  s border-radius: 10px;
-  /* border: 1px solid red; */
-  padding-bottom: 30px;
+  border-radius: 10px;
+  margin: 2em 0;
+  padding: 50px 0;
 }
 
 .go-back {
-  margin: 1em;
+  margin: 0.7em;
   align-self: flex-start;
   color: #647196;
   text-decoration: none;
-}
-
-div h1 {
-  color: #3A4374;
-  margin-bottom: 0.6em;
-  text-align: center;
-  font-size: 24px;
-  text-transform: capitalize;
+  border-bottom: 1px solid #647196;
+  padding-bottom: 3px;
 }
 
 form {
   display: flex;
-  /* border: 1px solid green; */
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 form div {
-  /* border: 1px solid green; */
   width: 86%;
   margin: 0.6em 0;
 }
@@ -81,7 +92,7 @@ form input, form select, form textarea {
 }
 
 form textarea {
-  height: 70px;
+  height: 130px !important;
 }
 
 form button {
@@ -92,6 +103,38 @@ form button {
   border-radius: 15px;
   height: 30px;
   margin-top: 0.7em;
+  text-transform: capitalize;
+}
+
+.go-back:hover {
+  transform: scale(1.2);
+  transition: ease-in;
+  transition-delay: 0.090s;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .cancel-form, .delete-form {
@@ -110,7 +153,7 @@ form button {
   text-transform: capitalize;
 }
 
-.go-back:hover{
+.go-back:hover {
   transform: scale(1.2);
   transition: ease-in;
   transition-delay: 0.090s;
@@ -146,7 +189,7 @@ form button {
     font-size: 22px;
   }
 
-  div h1, label h3  {
+  div h1, label h3 {
     font-size: 24px;
   }
 
@@ -177,5 +220,11 @@ form button {
   .delete, .cancel {
     width: 50%;
   }
+}
 
+
+@media (min-width: 1166px) {
+  .container {
+      width: 50%;
+    }
 }
