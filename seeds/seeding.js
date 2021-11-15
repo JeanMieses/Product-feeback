@@ -2,9 +2,9 @@ const Feedback = require('./../models/feedback');
 const data = require('./data.json');
 const mongoose = require('mongoose');
 
-//
+const dburl= process.env.DB_URL || 'mongodb://localhost:27017/product_feedback';
 
-mongoose.connect('mongodb+srv://JeanProductFeedback:s7tex3GIscrXqQ2a@cluster0.v0j1k.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(dburl, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
   console.log('connected to mongoose');
 })
